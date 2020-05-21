@@ -3,6 +3,7 @@
 	var app = angular.module('je', ['ngRoute', 'datePicker', 'cgBusy', 'je-paging',
 	                                 'je-main-workspace-controller',
                                          'je-master-pengirim-controller',
+                                         'je-master-track-controller',
                                          'je-master-jenis-pengiriman-controller',
 	                                 'angularUtils.directives.dirPagination']);
 
@@ -49,6 +50,17 @@
 			controller: "JenisPengirimanCreateController"
 		})
                 //end of Jenis Pengiriman Routes
+                
+                //Track Paket routes
+                .when("/master/track", {
+			templateUrl : "template/master/track_list.html",
+			controller: "TrackListController"
+		})
+                .when("/master/track/:id/detail", {
+			templateUrl : "template/master/track_detail.html",
+			controller: "TrackDetailController"
+		})
+                //end of Track Paket Routes
 		;
 	});
 	
