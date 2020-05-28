@@ -132,14 +132,14 @@
 //                                ];
 
 				TrackEditFactory.show({
-					nip : $routeParams.nip
+					id : $routeParams.id
 				}, function(data) {
 					$scope.track = data.track;
 				});
 
 				$scope.save = function() {
 					TrackEditFactory.update({
-						nip : $scope.track.nip_track313339,
+						id : $scope.track.track_id313339,
 						track : $scope.track
 					}, function(data) {
 						notif($dialogs, data.status, 'Simpan');
@@ -168,7 +168,7 @@
 		TrackEditFactory.show({
 			id : $routeParams.id
 		}, function(data) {
-			$scope.track = data.track;
+			$scope.trackpaket = data.trackpaket;
 		});
 
 

@@ -60,6 +60,14 @@
 			templateUrl : "template/master/track_detail.html",
 			controller: "TrackDetailController"
 		})
+                 .when("/master/track/:id/edit", {
+			templateUrl : "template/master/track_save.html",
+			controller: "TrackEditController"
+		})
+                .when("/master/track/new", {
+			templateUrl : "template/master/track_save.html",
+			controller: "TrackCreateController"
+		})
                 //end of Track Paket Routes
 		;
 	});
