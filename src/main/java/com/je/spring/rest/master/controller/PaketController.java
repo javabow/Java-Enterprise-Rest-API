@@ -74,7 +74,7 @@ public class PaketController {
         return response;
     }
     
-    @RequestMapping(value = "/transaksi/add/paket", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/transaksi/paket", method = RequestMethod.POST, produces = "application/json")
     public @ResponseBody Map<String, Object> insert(@RequestBody final Map<String, Object> request){
         
         Map<String, Object> response = new HashMap<String, Object>();

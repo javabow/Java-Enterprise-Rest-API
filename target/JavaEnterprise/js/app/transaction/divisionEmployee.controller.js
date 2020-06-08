@@ -106,62 +106,7 @@
 
 			} ]);
 	
-	
-	app.controller('TrDivisionEmployeeEditController', [
-			'$scope',
-			'$routeParams',
-			'$location',
-			'$dialogs',
-			'TrDivisionEmployeeEditFactory',
-			'DivisionListFactory',
-                        'EmployeeListFactory',
-			function($scope, $routeParams, $location, $dialogs,TrDivisionEmployeeEditFactory,
-					DivisionListFactory,EmployeeListFactory) {
-
-				$scope.title = "Ubah Karyawan-Divisi";
-				$scope.isEdit = true;
-                                
-                                $scope.statusList = [
-                                        {"name":"Active"},
-                                        {"name":"In Active"}
-                                ];
-                                
-                                DivisionListFactory.query({},function(data) {
-                                                    $scope.divisionList = data.list;
-                                            });
-                                EmployeeListFactory.query({},function(data) {
-                                                    $scope.employeeList = data.list;
-                                            });
-                                
-
-				TrDivisionEmployeeEditFactory.show({
-					id : $routeParams.id
-				}, function(data) {
-					$scope.trDivisionEmployee = data.trDivisionEmployee;
-				});
-
-				$scope.save = function() {
-					TrDivisionEmployeeEditFactory.update({
-						id : $scope.trDivisionEmployee.id,
-						trDivisionEmployee : $scope.trDivisionEmployee
-					}, function(data) {
-						 if(data.statusCode == "00"){
-                                                    dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
-                                                }else{
-                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
-                                                }
-						$location.path('/transaction/divisionEmployee');
-					});
-
-				};
-
-				$scope.cancel = function() {
-					$location.path('/transaction/divisionEmployee');
-				};
-
-			} ]);
-	
-	app.controller('TrDivisionEmployeeDetailController', [
+        app.controller('TrDivisionEmployeeDetailController', [
 	'$scope',
 	'$routeParams',
 	'$location',
@@ -182,6 +127,62 @@
 		};
 
 	} ]);
+	
+//	app.controller('TrDivisionEmployeeEditController', [
+//			'$scope',
+//			'$routeParams',
+//			'$location',
+//			'$dialogs',
+//			'TrDivisionEmployeeEditFactory',
+//			'DivisionListFactory',
+//                        'EmployeeListFactory',
+//			function($scope, $routeParams, $location, $dialogs,TrDivisionEmployeeEditFactory,
+//					DivisionListFactory,EmployeeListFactory) {
+//
+//				$scope.title = "Ubah Karyawan-Divisi";
+//				$scope.isEdit = true;
+//                                
+//                                $scope.statusList = [
+//                                        {"name":"Active"},
+//                                        {"name":"In Active"}
+//                                ];
+//                                
+//                                DivisionListFactory.query({},function(data) {
+//                                                    $scope.divisionList = data.list;
+//                                            });
+//                                EmployeeListFactory.query({},function(data) {
+//                                                    $scope.employeeList = data.list;
+//                                            });
+//                                
+//
+//				TrDivisionEmployeeEditFactory.show({
+//					id : $routeParams.id
+//				}, function(data) {
+//					$scope.trDivisionEmployee = data.trDivisionEmployee;
+//				});
+//
+//				$scope.save = function() {
+//					TrDivisionEmployeeEditFactory.update({
+//						id : $scope.trDivisionEmployee.id,
+//						trDivisionEmployee : $scope.trDivisionEmployee
+//					}, function(data) {
+//						 if(data.statusCode == "00"){
+//                                                    dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
+//                                                }else{
+//                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
+//                                                }
+//						$location.path('/transaction/divisionEmployee');
+//					});
+//
+//				};
+//
+//				$scope.cancel = function() {
+//					$location.path('/transaction/divisionEmployee');
+//				};
+//
+//			} ]);
+	
+	
 
 	
 	

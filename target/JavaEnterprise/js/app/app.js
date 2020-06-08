@@ -5,6 +5,7 @@
                                          'je-master-pengirim-controller',
                                          'je-master-track-controller',
                                          'je-master-jenis-pengiriman-controller',
+                                         'je-transaction-paket-controller',
 	                                 'angularUtils.directives.dirPagination']);
 
 	app.config(function($routeProvider) {
@@ -69,6 +70,17 @@
 			controller: "TrackCreateController"
 		})
                 //end of Track Paket Routes
+                
+                //Paket routes
+                .when("/transaction/paket", {
+			templateUrl : "template/transaction/paket_list.html",
+			controller: "PaketListController"
+		})
+                .when("/transaction/paket/:id/detail", {
+			templateUrl : "template/transaction/paket_detail.html",
+			controller: "PaketDetailController"
+		})
+                //end of Paket Routes
 		;
 	});
 	
