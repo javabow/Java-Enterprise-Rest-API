@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.je.spring.rest.service.impl;
+package com.je.spring.rest.master.service.impl;
 
-import com.je.spring.rest.model.Pengirim;
+import com.je.spring.rest.master.model.Pengirim;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.je.spring.rest.dao.PengirimDao;
-import com.je.spring.rest.service.PengirimService;
+import com.je.spring.rest.master.dao.PengirimDao;
+import com.je.spring.rest.master.service.PengirimService;
 /**
  *
  * @author User

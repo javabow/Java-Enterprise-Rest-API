@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.je.spring.rest.dao;
+package com.je.spring.rest.master.dao;
 
 import java.util.List;
-import com.je.spring.rest.model.Pengirim;
+import com.je.spring.rest.master.model.Pengirim;
 /**
  *
  * @author User

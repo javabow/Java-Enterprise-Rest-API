@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.je.spring.rest.dao.impl;
+package com.je.spring.rest.master.dao.impl;
 
-import com.je.spring.rest.model.Pengirim;
+import com.je.spring.rest.master.model.Pengirim;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -14,7 +14,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import com.je.spring.rest.dao.PengirimDao;
+import com.je.spring.rest.master.dao.PengirimDao;
 /**
  *
  * @author User

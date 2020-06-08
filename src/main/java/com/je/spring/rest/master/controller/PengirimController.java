@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.je.spring.rest.controller;
+package com.je.spring.rest.master.controller;
 
 import com.je.spring.rest.util.Constants;
 import java.util.HashMap;
 import java.util.Map;
-import com.je.spring.rest.model.Pengirim;
+import com.je.spring.rest.master.model.Pengirim;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.je.spring.rest.service.PengirimService;
+import com.je.spring.rest.master.service.PengirimService;
 /**
  *
  * @author User
