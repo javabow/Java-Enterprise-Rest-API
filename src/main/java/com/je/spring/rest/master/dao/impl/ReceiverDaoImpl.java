@@ -21,11 +21,11 @@ import com.je.spring.rest.master.dao.ReceiverDao;
  */
 @Repository("receiverDao")
 public class ReceiverDaoImpl implements ReceiverDao{
-    private static final String SQL_INSERT_RECEIVER = "INSERT INTO RECEIVER (nama_receiver313339,telp_receiver313339,email_receiver313339,alamat_receiver313339,pos_receiver313339) VALUES (?,?,?,?,?)";
+    private static final String SQL_INSERT_RECEIVER = "INSERT INTO RECEIVER (id_receiver313339,nama_receiver313339,telp_receiver313339,email_receiver313339,alamat_receiver313339,pos_receiver313339) VALUES (?,?,?,?,?,?)";
     private static final String SQL_UPDATE_RECEIVER = "UPDATE RECEIVER SET nama_receiver313339=?, telp_receiver313339=?, email_receiver313339=?,alamat_receiver313339=?,pos_receiver313339=? WHERE id_receiver313339=?";
     private static final String SQL_DELETE_RECEIVER = "DELETE FROM RECEIVER WHERE id_receiver313339=?";
-    private static final String SQL_SELECT_RECEIVER_BY_ID = "SELECT id_receiver313339,nama_receiver313339,telp_receiver313339,email_receiver313339,alamat_receiver313339,pos_receiver313339 FROM RECEIVER WHERE id_receiver313339=?";
-    private static final String SQL_SELECT_RECEIVER_ALL = "SELECT id_receiver313339,nama_receiver313339,telp_receiver313339,email_receiver313339,alamat_receiver313339,pos_receiver313339 FROM RECEIVER";
+    private static final String SQL_SELECT_RECEIVER_BY_ID = "SELECT id_receiver313339,nama_receiver313339,telp_receiver313339,email_receiver313339,alamat_receiver313339,pos_receiver313339=? FROM RECEIVER WHERE id_receiver313339=?";
+    private static final String SQL_SELECT_RECEIVER_ALL = "SELECT id_receiver313339,nama_receiver313339,telp_receiver313339,email_receiver313339,alamat_receiver313339,pos_receiver313339=? FROM RECEIVER";
     private static final String SQL_COUNT_RECEIVER = "SELECT COUNT(*) FROM RECEIVER";
     
     @Autowired
@@ -89,7 +89,7 @@ public class ReceiverDaoImpl implements ReceiverDao{
     @Override
     public void insert(Receiver receiver){
         try{
-            jdbcTemplate.update(SQL_INSERT_RECEIVER, new Object[]{receiver.getNama_receiver313339(),receiver.getTelp_receiver313339(),
+            jdbcTemplate.update(SQL_INSERT_RECEIVER, new Object[]{receiver.getId_receiver313339(),receiver.getNama_receiver313339(),receiver.getTelp_receiver313339(),
                 receiver.getEmail_receiver313339(),receiver.getAlamat_receiver313339(),receiver.getPos_receiver313339()});
         }
         catch(Exception e){
@@ -101,7 +101,7 @@ public class ReceiverDaoImpl implements ReceiverDao{
     public void update(Receiver receiver){
         try{
             jdbcTemplate.update(SQL_UPDATE_RECEIVER, new Object[]{receiver.getNama_receiver313339(),receiver.getTelp_receiver313339(),
-                receiver.getEmail_receiver313339(),receiver.getAlamat_receiver313339(),receiver.getPos_receiver313339(),receiver.getId_receiver313339()});
+                receiver.getEmail_receiver313339(),receiver.getAlamat_receiver313339(),receiver.getId_receiver313339(),receiver.getPos_receiver313339()});
         }
         catch(Exception e){
             e.printStackTrace();

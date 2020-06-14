@@ -21,11 +21,11 @@ import com.je.spring.rest.master.dao.SenderDao;
  */
 @Repository("senderDao")
 public class SenderDaoImpl implements SenderDao{
-    private static final String SQL_INSERT_SENDER = "INSERT INTO SENDER (nama_sender313339,telp_sender313339,email_sender313339,alamat_sender313339,partner_sender313339) VALUES (?,?,?,?,?)";
+    private static final String SQL_INSERT_SENDER = "INSERT INTO SENDER (id_sender313339,nama_sender313339,telp_sender313339,email_sender313339,alamat_sender313339,partner_sender313339) VALUES (?,?,?,?,?,?)";
     private static final String SQL_UPDATE_SENDER = "UPDATE SENDER SET nama_sender313339=?, telp_sender313339=?, email_sender313339=?,alamat_sender313339=?,partner_sender313339=? WHERE id_sender313339=?";
     private static final String SQL_DELETE_SENDER = "DELETE FROM SENDER WHERE id_sender313339=?";
-    private static final String SQL_SELECT_SENDER_BY_ID = "SELECT id_sender313339,nama_sender313339,telp_sender313339,email_sender313339,alamat_sender313339,partner_sender313339 FROM SENDER WHERE id_sender313339=?";
-    private static final String SQL_SELECT_SENDER_ALL = "SELECT id_sender313339,nama_sender313339,telp_sender313339,email_sender313339,alamat_sender313339,partner_sender313339 FROM SENDER";
+    private static final String SQL_SELECT_SENDER_BY_ID = "SELECT id_sender313339,nama_sender313339,telp_sender313339,email_sender313339,alamat_sender313339,partner_sender313339=? FROM SENDER WHERE id_sender313339=?";
+    private static final String SQL_SELECT_SENDER_ALL = "SELECT id_sender313339,nama_sender313339,telp_sender313339,email_sender313339,alamat_sender313339,partner_sender313339=? FROM SENDER";
     private static final String SQL_COUNT_SENDER = "SELECT COUNT(*) FROM SENDER";
     
     @Autowired
@@ -89,7 +89,7 @@ public class SenderDaoImpl implements SenderDao{
     @Override
     public void insert(Sender sender){
         try{
-            jdbcTemplate.update(SQL_INSERT_SENDER, new Object[]{sender.getNama_sender313339(),sender.getTelp_sender313339(),
+            jdbcTemplate.update(SQL_INSERT_SENDER, new Object[]{sender.getId_sender313339(),sender.getNama_sender313339(),sender.getTelp_sender313339(),
                 sender.getEmail_sender313339(),sender.getAlamat_sender313339(),sender.getPartner_sender313339()});
         }
         catch(Exception e){
@@ -101,7 +101,7 @@ public class SenderDaoImpl implements SenderDao{
     public void update(Sender sender){
         try{
             jdbcTemplate.update(SQL_UPDATE_SENDER, new Object[]{sender.getNama_sender313339(),sender.getTelp_sender313339(),
-                sender.getEmail_sender313339(),sender.getAlamat_sender313339(),sender.getPartner_sender313339(),sender.getId_sender313339()});
+                sender.getEmail_sender313339(),sender.getAlamat_sender313339(),sender.getId_sender313339(),sender.getPartner_sender313339()});
         }
         catch(Exception e){
             e.printStackTrace();
