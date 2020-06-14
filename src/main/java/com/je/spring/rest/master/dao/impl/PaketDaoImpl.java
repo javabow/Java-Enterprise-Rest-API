@@ -24,7 +24,7 @@ import org.springframework.stereotype.Repository;
 @Repository("paketDao")
 public class PaketDaoImpl implements PaketDao{
     
-    private static final String SQL_INSERT_PAKET = "INSERT INTO PAKET (service313339,nip_pengirim313339,nomor_resi313339,order_id313339,alamatpaket313339,penerima313339) VALUES (?,?,?,?,?,?)";
+    private static final String SQL_INSERT_PAKET = "INSERT INTO PAKET (id_paket313339,nomor_resi313339,order_id313339,alamatpaket313339,penerima313339,service313339,nip_pengirim313339) VALUES (?,?,?,?,?,?)";
     
     private static final String SQL_SELECT_PAKET_BY_ID = "SELECT paket.id_paket313339, paket.nomor_resi313339, paket.order_id313339, paket.alamatpaket313339, paket.penerima313339,"
             + " service.id_kurir_service313339, service.nama_service313339, service.harga_service313339, service.lama_hari313339,"
