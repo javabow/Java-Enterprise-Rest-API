@@ -5,6 +5,8 @@
                                          'je-master-pengirim-controller',
                                          'je-master-track-controller',
                                          'je-master-jenis-pengiriman-controller',
+                                         'je-master-sender-controller',
+                                         'je-master-receiver-controller',
                                          'je-transaction-paket-controller',
 	                                 'angularUtils.directives.dirPagination']);
 
@@ -81,7 +83,46 @@
 			controller: "PaketDetailController"
 		})
                 //end of Paket Routes
+                
+                //Sender Routes
+                .when("/master/sender", {
+			templateUrl : "template/master/sender_list.html",
+			controller: "SenderListController"
+		})
+                .when("/master/sender/:id/detail", {
+			templateUrl : "template/master/sender_detail.html",
+			controller: "SenderDetailController"
+		})
+                .when("/master/sender/:id/edit", {
+			templateUrl : "template/master/sender_save.html",
+			controller: "SenderEditController"
+		})
+                .when("/master/sender/new", {
+			templateUrl : "template/master/sender_save.html",
+			controller: "SenderCreateController"
+		})
+                //end of Sender Routes
+                
+                //Receiver Routes
+                .when("/master/receiver", {
+			templateUrl : "template/master/receiver_list.html",
+			controller: "ReceiverListController"
+		})
+                .when("/master/receiver/:id/detail", {
+			templateUrl : "template/master/receiver_detail.html",
+			controller: "ReceiverDetailController"
+		})
+                .when("/master/receiver/:id/edit", {
+			templateUrl : "template/master/receiver_save.html",
+			controller: "ReceiverEditController"
+		})
+                .when("/master/receiver/new", {
+			templateUrl : "template/master/receiver_save.html",
+			controller: "ReceiverCreateController"
+		})
+                //end of Receiver Routes
 		;
+                
 	});
 	
 	app.filter('trusted', ['$sce', function ($sce) {

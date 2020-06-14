@@ -1,0 +1,124 @@
+<div style="background-color: #121212; color: white 85%;" class="mainbar">
+
+	<!-- Page heading -->
+	<div class="page-head">
+		<!-- Page heading -->
+		<h2 class="pull-left">
+			Master Create Receiver Member
+			<!-- page meta -->
+
+		</h2>
+
+		<!-- Breadcrumb -->
+		<!-- <div class="bread-crumb pull-right">
+			<a href="workspace.html"><i class="icon-home"></i> Home</a>
+			Divider
+			<span class="divider">/</span> <a href="#" class="bread-current">{{title}}</a>
+		</div> -->
+
+		<div class="clearfix"></div>
+
+	</div>
+	<!-- Page heading ends -->
+
+
+	<!-- Matter -->
+
+	<div class="matter">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+
+					<div style="background-color: rgb(31, 33, 35);" class="widget">
+
+						<div style="background-color: rgb(31, 33, 35);" class="widget-head">
+							<div class="pull-left">{{title}}</div>
+							<div class="widget-icons pull-right">
+		                    	<a ng-click="cancel()" class="wclose"><i class="icon-remove"></i></a>
+		                  	</div>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="widget-content">
+							<div class="padd">
+
+								<!-- Form starts.  -->
+								<form style="background-color: rgb(31, 33, 35);" name="receiverEditForm" class="form-horizontal" role="form">
+									<div class="form-group">
+										<label ng-show="isEdit" class="col-md-2">ID</label>
+
+										<div class="col-md-5">
+											<strong ng-show="isEdit">{{receiver.id_receiver313339}}</strong>
+											<!-- <input style="background-color: #121212;color: white 85%;" ng-hide="isEdit" maxlength="6" type="text" ng-model="receiver.id_receiver313339" placeholder="Isi Id" class="form-control">-->
+										</div>
+									</div>                                                                  
+									
+									<div class="form-group">
+										<label class="col-md-2">Nama</label>
+
+										<div class="col-md-5">
+											<input style="background-color: #121212;color: white 85%;" maxlength="50" type="text" ng-model="receiver.nama_receiver313339" placeholder="Isi Nama" class="form-control" required>
+										</div>
+									</div>
+                                                                    
+                                                                        <div class="form-group">
+										<label class="col-md-2">Telepon</label>
+
+										<div class="col-md-5">
+											<input style="background-color: #121212;color: white 85%;" maxlength="50" type="text" ng-model="receiver.telp_receiver313339" placeholder="Isi Telepon" class="form-control" required>
+										</div>
+									</div>
+                                                                    
+                                                                        <div class="form-group">
+										<label class="col-md-2">Alamat</label>
+
+										<div class="col-md-5">
+											<textarea style="background-color: #121212;color: white 85%;" maxlength="255" rows="5" ng-model="receiver.alamat_receiver313339" placeholder="Isi Alamat" class="form-control" required ></textarea>
+										</div>
+                                                                        </div>
+                                                                    
+                                                                        <div class="form-group">
+										<label class="col-md-2">Email</label>
+
+										<div class="col-md-5">
+											<input style="background-color: #121212;color: white 85%;" maxlength="50" type="text" ng-model="receiver.email_receiver313339" placeholder="Isi Email" class="form-control" required>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-2">Kode Pos</label>
+
+										<div class="col-md-5">
+											<input style="background-color: #121212;color: white 85%;" maxlength="255" rows="5" ng-model="receiver.pos_receiver313339" placeholder="Kode Pos Dari Receiver" class="form-control" required >
+										</div>
+                                                                        </div>
+                                                                    
+                                                                  
+
+								</form>
+							</div>
+						</div>
+
+
+						<div style="background-color: rgb(31, 33, 35);" class="widget-foot">
+							<div class="text-right">
+								<button  type="button" ng-click="receiverEditForm.$valid && save()" class="btn btn-success">
+									Simpan
+								</button>
+								<button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<!-- Matter ends -->
+
+</div>
