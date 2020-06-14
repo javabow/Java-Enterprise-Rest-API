@@ -82,6 +82,10 @@
 			templateUrl : "template/transaction/paket_detail.html",
 			controller: "PaketDetailController"
 		})
+                .when("/transaction/paket/new", {
+			templateUrl : "template/transaction/paket_save.html",
+			controller: "PaketCreateController"
+		})
                 //end of Paket Routes
                 
                 //Sender Routes

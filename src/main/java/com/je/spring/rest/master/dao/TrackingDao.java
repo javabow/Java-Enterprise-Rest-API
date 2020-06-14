@@ -18,5 +18,6 @@ public interface TrackingDao {
     public Tracking getById(int id);
     public long count();
     public void insert(Tracking sender);
+    public void update(Tracking sender);
     
 }

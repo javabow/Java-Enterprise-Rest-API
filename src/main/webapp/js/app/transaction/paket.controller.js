@@ -60,58 +60,58 @@
 
 			} ]);
 
-//	app.controller('PaketCreateController', [
-//			'$scope',
-//			'$routeParams',
-//			'$location',
-//			'$dialogs',
-//			'PaketListFactory',
-//                        'DivisionListFactory',
-//                        'EmployeeListFactory',
-//			function($scope, $routeParams, $location,$dialogs,PaketListFactory,DivisionListFactory,EmployeeListFactory) {
-//
-//				$scope.title = "Buat Baru Karyawan-Divisi";
-//				$scope.isEdit = false;
-//                                
-//                                $scope.statusList = [
-//                                        {"name":"Active"},
-//                                        {"name":"In Active"}
-//                                ];
-//                                
-//                                DivisionListFactory.query({},function(data) {
-//                                                    $scope.divisionList = data.list;
-//                                            });
-//                                EmployeeListFactory.query({},function(data) {
-//                                                    $scope.paketList = data.list;
-//                                            });
-//		    			
-//
-//				$scope.paket = {
-//                                        
-//				};
-//                                
-//                                
-//                                 
-//				$scope.save = function() {
-//					PaketListFactory.create({
-//						paket : $scope.paket
-//					}, function(data) {
-//						//notif($dialogs, data.status, 'Simpan');
-//                                                if(data.statusCode == "00"){
-//                                                    dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
-//                                                }else{
-//                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
-//                                                }
-//						$location.path('/transaction/divisionEmployee');
-//					});
-//
-//				};
-//
-//				$scope.cancel = function() {
-//					$location.path('/transaction/divisionEmployee');
-//				};
-//
-//			} ]);
+	app.controller('PaketCreateController', [
+			'$scope',
+			'$routeParams',
+			'$location',
+			'$dialogs',
+			'PaketListFactory',
+                        'PengirimListFactory',
+                        'JenisPengirimanListFactory',
+			function($scope, $routeParams, $location,$dialogs,PaketListFactory,PengirimListFactory,JenisPengirimanListFactory) {
+
+				$scope.title = "Buat Baru Paket";
+				$scope.isEdit = false;
+                                
+                                $scope.statusList = [
+                                        {"name":"Active"},
+                                        {"name":"In Active"}
+                                ];
+                                
+                                PengirimListFactory.query({},function(data) {
+                                                    $scope.pengirimList = data.list;
+                                            });
+                                JenisPengirimanListFactory.query({},function(data) {
+                                                    $scope.jenisPengirimanList = data.list;
+                                            });
+		    			
+
+				$scope.paket = {
+                                        
+				};
+                                
+                                
+                                 
+				$scope.save = function() {
+					PaketListFactory.create({
+						paket : $scope.paket
+					}, function(data) {
+						//notif($dialogs, data.status, 'Simpan');
+                                                if(data.statusCode == "00"){
+                                                    dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
+                                                }else{
+                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
+                                                }
+						$location.path('/transaction/paket');
+					});
+
+				};
+
+				$scope.cancel = function() {
+					$location.path('/transaction/paket');
+				};
+
+			} ]);
 	
         app.controller('PaketDetailController', [
 	'$scope',
@@ -141,10 +141,10 @@
 //			'$location',
 //			'$dialogs',
 //			'PaketEditFactory',
-//			'DivisionListFactory',
-//                        'EmployeeListFactory',
+//			'PengirimListFactory',
+//                        'JenisPengirimanListFactory',
 //			function($scope, $routeParams, $location, $dialogs,PaketEditFactory,
-//					DivisionListFactory,EmployeeListFactory) {
+//					PengirimListFactory,JenisPengirimanListFactory) {
 //
 //				$scope.title = "Ubah Karyawan-Divisi";
 //				$scope.isEdit = true;
@@ -154,10 +154,10 @@
 //                                        {"name":"In Active"}
 //                                ];
 //                                
-//                                DivisionListFactory.query({},function(data) {
-//                                                    $scope.divisionList = data.list;
+//                                PengirimListFactory.query({},function(data) {
+//                                                    $scope.pengirimList = data.list;
 //                                            });
-//                                EmployeeListFactory.query({},function(data) {
+//                                JenisPengirimanListFactory.query({},function(data) {
 //                                                    $scope.paketList = data.list;
 //                                            });
 //                                
@@ -178,13 +178,13 @@
 //                                                }else{
 //                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
 //                                                }
-//						$location.path('/transaction/divisionEmployee');
+//						$location.path('/transaction/pengirimJenisPengiriman');
 //					});
 //
 //				};
 //
 //				$scope.cancel = function() {
-//					$location.path('/transaction/divisionEmployee');
+//					$location.path('/transaction/pengirimJenisPengiriman');
 //				};
 //
 //			} ]);

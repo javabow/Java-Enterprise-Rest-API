@@ -17,5 +17,6 @@ public interface TrackingService {
     public Tracking getById(int id);
     public long count();
     public void insert(Tracking tracking);
+    public void update(Tracking tracking);
     
 }

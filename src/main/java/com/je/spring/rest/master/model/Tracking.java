@@ -30,8 +30,8 @@ public class Tracking {
         return id_receiver313339;
     }
 
-    public void setId_service313339(Receiver id_service313339) {
-        this.id_receiver313339 = id_service313339;
+    public void setId_receiver313339(Receiver id_receiver313339) {
+        this.id_receiver313339 = id_receiver313339;
     }
 
     public Sender getId_sender313339() {

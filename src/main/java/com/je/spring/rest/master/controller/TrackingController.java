@@ -115,4 +115,46 @@ public class TrackingController {
         
     }
     
+    @RequestMapping(value = "/transaksi/tracking/{id}", method = RequestMethod.PUT, produces = "application/json")
+    public @ResponseBody Map<String, Object> update(@PathVariable("id") final int id,
+           @RequestBody final Map<String, Object> request){
+        
+        Map<String, Object> response = new HashMap<String, Object>();
+        Map<String, Object> trackingMap = (Map<String, Object>) request.get(Constants.TRACKING313339_KEY);
+     
+        try{
+            StringBuffer str = new StringBuffer(trackingMap.toString());
+        
+            System.out.println(str);
+            
+            String maptracking = str.toString();
+            Tracking tracking = gson.fromJson(maptracking, Tracking.class);
+            
+            Integer id_receiver313339 = tracking.getId_receiver313339().getId_receiver313339();
+                if(receiverService.getById(id_receiver313339) == null) {
+                    response.put(Constants.STATUS, "Data Receiver tidak ditemukan.");
+
+                    return response;
+                }
+
+            Integer id_sender313339 = tracking.getId_sender313339().getId_sender313339();
+                if(senderService.getById(id_sender313339) == null) {
+                    response.put(Constants.STATUS, "Data Sender tidak ditemukan.");
+
+                    return response;
+                }
+            
+            trackingService.update(tracking);
+            
+            response.put(Constants.STATUS, Constants.OK);
+        }
+        catch(Exception e){
+            response.put(Constants.STATUS, Constants.ERROR);
+            e.printStackTrace();
+        }
+        
+        return response;
+        
+    }
+    
 }

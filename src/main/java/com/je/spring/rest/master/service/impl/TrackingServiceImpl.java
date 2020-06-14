@@ -46,4 +46,8 @@ public class TrackingServiceImpl implements TrackingService{
         trackingDao.insert(tracking);
     }
     
+    @Override
+    public void update(Tracking tracking){
+        trackingDao.update(tracking);
+    }
 }
