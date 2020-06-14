@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.4.10-MariaDB)
-# Date: 2020-06-14 12:32:25
+# Date: 2020-06-14 19:46:09
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -80,7 +80,7 @@ CREATE TABLE `sender` (
   `email_sender313339` varchar(255) DEFAULT NULL,
   `partner_sender313339` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_sender313339`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=457 DEFAULT CHARSET=utf8mb4;
 
 #
 # Data for table "sender"
@@ -127,3 +127,23 @@ CREATE TABLE `track_paket` (
 #
 
 INSERT INTO `track_paket` VALUES (5,16,'pYbOutL','Paket telah dipick oleh kurir','Bandung'),(7,17,'aRwfcuA','Dalam pengiriman menuju kota tujuan','Jakarta'),(11,99,'AABBCCA','Dalam Transit Ke Laut','Aceh'),(12,22,'CCADD','Dalam Transit Bandara','Bali');
+
+#
+# Structure for table "tracking"
+#
+
+DROP TABLE IF EXISTS `tracking`;
+CREATE TABLE `tracking` (
+  `id_tracking313339` int(11) NOT NULL AUTO_INCREMENT,
+  `nomor_resi313339` varchar(255) DEFAULT NULL,
+  `id_sender313339` varchar(255) DEFAULT NULL,
+  `id_receiver313339` varchar(255) DEFAULT NULL,
+  `tujuan313339` varchar(255) DEFAULT NULL,
+  `status313339` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_tracking313339`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+#
+# Data for table "tracking"
+#
+
