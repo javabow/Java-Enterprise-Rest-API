@@ -26,4 +26,6 @@ public class Constants {
         public static final String TRACKPAKET313339_KEY = "trackpaket";
         public static final String JENISPENGIRIMAN313339_KEY = "jenispengiriman";
         public static final String PAKET313339_KEY = "paket";
+        public static final String SENDER313339_KEY = "sender";
+        public static final String RECEIVER313339_KEY = "receiver";
 }
