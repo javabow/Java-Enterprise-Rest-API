@@ -15,6 +15,7 @@ public class Pengirim {
     private String telp_pengirim313339;
     private String email_pengirim313339;
     private String alamat_pengirim313339;
+    private String jenkel_pengirim313339;
 
     public int getNip_pengirim313339() {
         return nip_pengirim313339;
@@ -54,5 +55,13 @@ public class Pengirim {
 
     public void setAlamat_pengirim313339(String alamat_pengirim313339) {
         this.alamat_pengirim313339 = alamat_pengirim313339;
+    }
+    
+    public String getJenkel_pengirim313339() {
+        return jenkel_pengirim313339;
+    }
+
+    public void setJenkel_pengirim313339(String jenkel_pengirim313339) {
+        this.jenkel_pengirim313339 = jenkel_pengirim313339;
     }
 }

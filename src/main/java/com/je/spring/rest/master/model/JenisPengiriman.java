@@ -16,6 +16,7 @@ public class JenisPengiriman {
     private int id_harga_service313339;
     private int lama_hari313339;
     private int berat_barang313339;
+    private String jenis_barang313339;
 
     public int getBerat_barang313339() {
         return berat_barang313339;
@@ -55,6 +56,14 @@ public class JenisPengiriman {
 
     public void setLama_hari313339(int lama_hari313339) {
         this.lama_hari313339 = lama_hari313339;
+    }
+    
+    public String getJenis_barang313339() {
+        return jenis_barang313339;
+    }
+
+    public void setJenis_barang313339(String jenis_barang313339) {
+        this.jenis_barang313339 = jenis_barang313339;
     }
     
 }

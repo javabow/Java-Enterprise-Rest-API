@@ -21,11 +21,11 @@ import com.je.spring.rest.master.dao.PengirimDao;
  */
 @Repository("pengirimDao")
 public class PengirimDaoImpl implements PengirimDao{
-    private static final String SQL_INSERT_PENGIRIM = "INSERT INTO PENGIRIM (nip_pengirim313339,nama_pengirim313339,telp_pengirim313339,email_pengirim313339,alamat_pengirim313339) VALUES (?,?,?,?,?)";
-    private static final String SQL_UPDATE_PENGIRIM = "UPDATE PENGIRIM SET nama_pengirim313339=?, telp_pengirim313339=?, email_pengirim313339=?,alamat_pengirim313339=? WHERE nip_pengirim313339=?";
+    private static final String SQL_INSERT_PENGIRIM = "INSERT INTO PENGIRIM (nip_pengirim313339,nama_pengirim313339,telp_pengirim313339,email_pengirim313339,alamat_pengirim313339,jenkel_pengirim313339) VALUES (?,?,?,?,?,?)";
+    private static final String SQL_UPDATE_PENGIRIM = "UPDATE PENGIRIM SET nama_pengirim313339=?, telp_pengirim313339=?, email_pengirim313339=?,alamat_pengirim313339=?,jenkel_pengirim313339=? WHERE nip_pengirim313339=?";
     private static final String SQL_DELETE_PENGIRIM = "DELETE FROM PENGIRIM WHERE nip_pengirim313339=?";
-    private static final String SQL_SELECT_PENGIRIM_BY_ID = "SELECT nip_pengirim313339,nama_pengirim313339,telp_pengirim313339,email_pengirim313339,alamat_pengirim313339 FROM PENGIRIM WHERE nip_pengirim313339=?";
-    private static final String SQL_SELECT_PENGIRIM_ALL = "SELECT nip_pengirim313339,nama_pengirim313339,telp_pengirim313339,email_pengirim313339,alamat_pengirim313339 FROM PENGIRIM";
+    private static final String SQL_SELECT_PENGIRIM_BY_ID = "SELECT nip_pengirim313339,nama_pengirim313339,telp_pengirim313339,email_pengirim313339,alamat_pengirim313339,jenkel_pengirim313339 FROM PENGIRIM WHERE nip_pengirim313339=?";
+    private static final String SQL_SELECT_PENGIRIM_ALL = "SELECT nip_pengirim313339,nama_pengirim313339,telp_pengirim313339,email_pengirim313339,alamat_pengirim313339,jenkel_pengirim313339 FROM PENGIRIM";
     private static final String SQL_COUNT_PENGIRIM = "SELECT COUNT(*) FROM PENGIRIM";
     
     @Autowired
@@ -59,6 +59,7 @@ public class PengirimDaoImpl implements PengirimDao{
                                                 pengirim.setTelp_pengirim313339(rs.getString("telp_pengirim313339"));
                                                 pengirim.setEmail_pengirim313339(rs.getString("email_pengirim313339"));
                                                 pengirim.setAlamat_pengirim313339(rs.getString("alamat_pengirim313339"));
+                                                pengirim.setJenkel_pengirim313339(rs.getString("jenkel_pengirim313339"));
                                                 
                                                 return pengirim;
                                         }    
@@ -89,7 +90,7 @@ public class PengirimDaoImpl implements PengirimDao{
     public void insert(Pengirim pengirim){
         try{
             jdbcTemplate.update(SQL_INSERT_PENGIRIM, new Object[]{pengirim.getNip_pengirim313339(),pengirim.getNama_pengirim313339(),pengirim.getTelp_pengirim313339(),
-                pengirim.getEmail_pengirim313339(),pengirim.getAlamat_pengirim313339()});
+                pengirim.getEmail_pengirim313339(),pengirim.getAlamat_pengirim313339(),pengirim.getJenkel_pengirim313339()});
         }
         catch(Exception e){
             e.printStackTrace();
@@ -100,7 +101,7 @@ public class PengirimDaoImpl implements PengirimDao{
     public void update(Pengirim pengirim){
         try{
             jdbcTemplate.update(SQL_UPDATE_PENGIRIM, new Object[]{pengirim.getNama_pengirim313339(),pengirim.getTelp_pengirim313339(),
-                pengirim.getEmail_pengirim313339(),pengirim.getAlamat_pengirim313339(),pengirim.getNip_pengirim313339()});
+                pengirim.getEmail_pengirim313339(),pengirim.getAlamat_pengirim313339(),pengirim.getJenkel_pengirim313339(),pengirim.getNip_pengirim313339()});
         }
         catch(Exception e){
             e.printStackTrace();

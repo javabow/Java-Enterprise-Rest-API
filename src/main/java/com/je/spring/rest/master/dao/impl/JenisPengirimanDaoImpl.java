@@ -22,11 +22,11 @@ import com.je.spring.rest.master.dao.JenisPengirimanDao;
 @Repository("jenisPengirimanDao")
 public class JenisPengirimanDaoImpl implements JenisPengirimanDao{
     
-    private static final String SQL_INSERT_PENGIRIMAN = "INSERT INTO SERVICE (id_kurir_service313339,nama_service313339,harga_service313339,lama_hari313339,berat_barang313339) VALUES (?,?,?,?,?)";
-    private static final String SQL_UPDATE_PENGIRIMAN = "UPDATE SERVICE SET nama_service313339=?, harga_service313339=?, lama_hari313339=?, berat_barang313339=? WHERE id_kurir_service313339=?";
+    private static final String SQL_INSERT_PENGIRIMAN = "INSERT INTO SERVICE (id_kurir_service313339,nama_service313339,harga_service313339,lama_hari313339,berat_barang313339,jenis_barang313339) VALUES (?,?,?,?,?,?)";
+    private static final String SQL_UPDATE_PENGIRIMAN = "UPDATE SERVICE SET nama_service313339=?,harga_service313339=?,lama_hari313339=?,berat_barang313339=?,jenis_barang313339=? WHERE id_kurir_service313339=?";
     private static final String SQL_DELETE_PENGIRIMAN = "DELETE FROM SERVICE WHERE id_kurir_service313339=?";
-    private static final String SQL_SELECT_PENGIRIMAN_BY_ID = "SELECT id_kurir_service313339,nama_service313339,harga_service313339,lama_hari313339,berat_barang313339 FROM SERVICE WHERE id_kurir_service313339=?";
-    private static final String SQL_SELECT_PENGIRIMAN_ALL = "SELECT id_kurir_service313339,nama_service313339,harga_service313339,lama_hari313339,berat_barang313339 FROM SERVICE";
+    private static final String SQL_SELECT_PENGIRIMAN_BY_ID = "SELECT id_kurir_service313339,nama_service313339,harga_service313339,lama_hari313339,berat_barang313339,jenis_barang313339 FROM SERVICE WHERE id_kurir_service313339=?";
+    private static final String SQL_SELECT_PENGIRIMAN_ALL = "SELECT id_kurir_service313339,nama_service313339,harga_service313339,lama_hari313339,berat_barang313339,jenis_barang313339 FROM SERVICE";
     private static final String SQL_COUNT_PENGIRIMAN = "SELECT COUNT(*) FROM SERVICE";
     
     @Autowired
@@ -60,6 +60,7 @@ public class JenisPengirimanDaoImpl implements JenisPengirimanDao{
                                                 jenisPengiriman.setId_harga_service313339(rs.getInt("harga_service313339"));
                                                 jenisPengiriman.setLama_hari313339(rs.getInt("lama_hari313339"));
                                                 jenisPengiriman.setBerat_barang313339(rs.getInt("berat_barang313339"));
+                                                jenisPengiriman.setJenis_barang313339(rs.getString("jenis_barang313339"));
                                                 
                                                 return jenisPengiriman;
                                         }    
@@ -90,7 +91,7 @@ public class JenisPengirimanDaoImpl implements JenisPengirimanDao{
     public void insert(JenisPengiriman jenisPengiriman){
         try{
             jdbcTemplate.update(SQL_INSERT_PENGIRIMAN, new Object[]{jenisPengiriman.getId_kurir_service313339(),jenisPengiriman.getNama_service313339(),jenisPengiriman.getId_harga_service313339(),
-                jenisPengiriman.getLama_hari313339(),jenisPengiriman.getBerat_barang313339()});
+                jenisPengiriman.getLama_hari313339(),jenisPengiriman.getBerat_barang313339(),jenisPengiriman.getJenis_barang313339()});
         }
         catch(Exception e){
             e.printStackTrace();
@@ -101,7 +102,7 @@ public class JenisPengirimanDaoImpl implements JenisPengirimanDao{
     public void update(JenisPengiriman jenisPengiriman){
         try{
             jdbcTemplate.update(SQL_UPDATE_PENGIRIMAN, new Object[]{jenisPengiriman.getNama_service313339(),jenisPengiriman.getId_harga_service313339(),
-                jenisPengiriman.getLama_hari313339(),jenisPengiriman.getBerat_barang313339(),jenisPengiriman.getId_kurir_service313339()});
+                jenisPengiriman.getLama_hari313339(),jenisPengiriman.getBerat_barang313339(),jenisPengiriman.getJenis_barang313339(),jenisPengiriman.getId_kurir_service313339()});
         }
         catch(Exception e){
             e.printStackTrace();

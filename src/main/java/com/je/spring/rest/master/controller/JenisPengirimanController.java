@@ -75,6 +75,7 @@ public class JenisPengirimanController {
             jenisPengiriman.setId_harga_service313339(Integer.parseInt((String)jenisPengirimanMap.get("harga_service313339")));
             jenisPengiriman.setLama_hari313339(Integer.parseInt((String)jenisPengirimanMap.get("lama_hari313339")));
             jenisPengiriman.setBerat_barang313339(Integer.parseInt((String)jenisPengirimanMap.get("berat_barang313339")));
+            jenisPengiriman.setJenis_barang313339((String) jenisPengirimanMap.get("jenis_barang313339"));
                     
             jenisPengirimanService.insert(jenisPengiriman);
             
@@ -102,6 +103,7 @@ public class JenisPengirimanController {
             jenisPengiriman.setId_harga_service313339(Integer.parseInt((String)jenisPengirimanMap.get("harga_service313339")));
             jenisPengiriman.setLama_hari313339(Integer.parseInt((String)jenisPengirimanMap.get("lama_hari313339")));
             jenisPengiriman.setBerat_barang313339(Integer.parseInt((String)jenisPengirimanMap.get("berat_barang313339")));
+            jenisPengiriman.setJenis_barang313339((String) jenisPengirimanMap.get("jenis_barang313339"));
             jenisPengirimanService.update(jenisPengiriman);
             
             response.put(Constants.STATUS, Constants.OK);

@@ -74,6 +74,7 @@ public class PengirimController {
             pengirim.setTelp_pengirim313339((String) pengirimMap.get("telp_pengirim313339"));
             pengirim.setEmail_pengirim313339((String) pengirimMap.get("email_pengirim313339"));
             pengirim.setAlamat_pengirim313339((String) pengirimMap.get("alamat_pengirim313339"));
+            pengirim.setJenkel_pengirim313339((String) pengirimMap.get("jenkel_pengirim313339"));
             
             pengirimService.insert(pengirim);
             
@@ -101,6 +102,7 @@ public class PengirimController {
             pengirim.setTelp_pengirim313339((String) pengirimMap.get("telp_pengirim313339"));
             pengirim.setEmail_pengirim313339((String) pengirimMap.get("email_pengirim313339"));
             pengirim.setAlamat_pengirim313339((String) pengirimMap.get("alamat_pengirim313339"));
+            pengirim.setJenkel_pengirim313339((String) pengirimMap.get("jenkel_pengirim313339"));
             
             pengirimService.update(pengirim);
             

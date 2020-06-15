@@ -80,7 +80,7 @@
 			function($scope, $routeParams, $location,$dialogs,
 					SenderListFactory) {
 
-				$scope.title = "Buat Baru Sender Kurir";
+				$scope.title = "Buat Baru Sender Member";
 				$scope.isEdit = false;
                                 
 //                                $scope.genderList = [
