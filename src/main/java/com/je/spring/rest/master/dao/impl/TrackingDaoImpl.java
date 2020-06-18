@@ -24,7 +24,7 @@ import org.springframework.stereotype.Repository;
 @Repository("TrackingDao")
 public class TrackingDaoImpl implements TrackingDao{
     
-    private static final String SQL_INSERT_PAKET = "INSERT INTO TRACKING (id_sender313339, id_receiver313339, tujuan313339, status313339) VALUES (?,?,?,?,?)";
+    private static final String SQL_INSERT_PAKET = "INSERT INTO TRACKING (id_sender313339, id_receiver313339, tujuan313339, status313339) VALUES (?,?,?,?)";
     
     private static final String SQL_UPDATE_PAKET = "UPDATE TRACKING SET id_sender313339=?, id_receiver313339=?, tujuan313339=?, status313339=? WHERE id_tracking313339=?";
     

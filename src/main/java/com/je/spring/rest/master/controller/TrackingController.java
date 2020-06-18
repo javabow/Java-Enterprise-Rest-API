@@ -87,6 +87,7 @@ public class TrackingController {
             
             String maptracking = str.toString();
             Tracking tracking = gson.fromJson(maptracking, Tracking.class);
+            //gson.fromJson(gson.toJson(<your_data>), YourClassName::class.java)
             
             Integer id_receiver313339 = tracking.getId_receiver313339().getId_receiver313339();
                 if(receiverService.getById(id_receiver313339) == null) {
