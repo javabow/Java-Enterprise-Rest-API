@@ -86,6 +86,10 @@
 			templateUrl : "template/transaction/paket_save.html",
 			controller: "PaketCreateController"
 		})
+                .when("/transaction/paket/:id/edit", {
+			templateUrl : "template/transaction/paket_save.html",
+			controller: "PaketEditController"
+		})
                 //end of Paket Routes
                 
                 //Sender Routes

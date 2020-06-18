@@ -30,11 +30,11 @@
 			show : {
 				method : 'GET',
 				params: {id: '@id'}
+			},
+			update : {
+				method : 'PUT',
+				params :{id: '@id'}
 			}
-//			update : {
-//				method : 'PUT',
-//				params :{id: '@id'}
-//			}
 		});
 
 	} ]);

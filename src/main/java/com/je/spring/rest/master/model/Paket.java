@@ -18,6 +18,15 @@ public class Paket {
     private int id_order313339;
     private String alamat313339;
     private String penerima313339;
+    private int id_tracking313339;
+
+    public int getId_tracking313339() {
+        return id_tracking313339;
+    }
+
+    public void setId_tracking313339(int id_tracking313339) {
+        this.id_tracking313339 = id_tracking313339;
+    }
 
     public int getId_paket313339() {
         return id_paket313339;

@@ -97,7 +97,7 @@
 						paket : $scope.paket
 					}, function(data) {
 						//notif($dialogs, data.status, 'Simpan');
-                                                if(data.statusCode == "00"){
+                                                if(data.status == "OK"){
                                                     dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
                                                 }else{
                                                     dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
@@ -135,59 +135,59 @@
 
 	} ]);
 	
-//	app.controller('PaketEditController', [
-//			'$scope',
-//			'$routeParams',
-//			'$location',
-//			'$dialogs',
-//			'PaketEditFactory',
-//			'PengirimListFactory',
-//                        'JenisPengirimanListFactory',
-//			function($scope, $routeParams, $location, $dialogs,PaketEditFactory,
-//					PengirimListFactory,JenisPengirimanListFactory) {
-//
-//				$scope.title = "Ubah Karyawan-Divisi";
-//				$scope.isEdit = true;
-//                                
-//                                $scope.statusList = [
-//                                        {"name":"Active"},
-//                                        {"name":"In Active"}
-//                                ];
-//                                
-//                                PengirimListFactory.query({},function(data) {
-//                                                    $scope.pengirimList = data.list;
-//                                            });
-//                                JenisPengirimanListFactory.query({},function(data) {
-//                                                    $scope.paketList = data.list;
-//                                            });
-//                                
-//
-//				PaketEditFactory.show({
-//					id : $routeParams.id
-//				}, function(data) {
-//					$scope.paket = data.paket;
-//				});
-//
-//				$scope.save = function() {
-//					PaketEditFactory.update({
-//						id : $scope.paket.id_paket313339,
-//						paket : $scope.paket
-//					}, function(data) {
-//						 if(data.statusCode == "00"){
-//                                                    dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
-//                                                }else{
-//                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
-//                                                }
-//						$location.path('/transaction/pengirimJenisPengiriman');
-//					});
-//
-//				};
-//
-//				$scope.cancel = function() {
-//					$location.path('/transaction/pengirimJenisPengiriman');
-//				};
-//
-//			} ]);
+	app.controller('PaketEditController', [
+			'$scope',
+			'$routeParams',
+			'$location',
+			'$dialogs',
+			'PaketEditFactory',
+			'PengirimListFactory',
+                        'JenisPengirimanListFactory',
+			function($scope, $routeParams, $location, $dialogs,PaketEditFactory,
+					PengirimListFactory,JenisPengirimanListFactory) {
+
+				$scope.title = "Edit Data Paket";
+				$scope.isEdit = true;
+                                
+                                $scope.statusList = [
+                                        {"name":"Active"},
+                                        {"name":"In Active"}
+                                ];
+                                
+                                PengirimListFactory.query({},function(data) {
+                                                    $scope.pengirimList = data.list;
+                                            });
+                                JenisPengirimanListFactory.query({},function(data) {
+                                                    $scope.jenisPengirimanList = data.list;
+                                            });
+                                
+
+				PaketEditFactory.show({
+					id : $routeParams.id
+				}, function(data) {
+					$scope.paket = data.paket;
+				});
+
+				$scope.save = function() {
+					PaketEditFactory.update({
+						id : $scope.paket.id_paket313339,
+						paket : $scope.paket
+					}, function(data) {
+						 if(data.statusCode == "200"){
+                                                    dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
+                                                }else{
+                                                    dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);
+                                                }
+						$location.path('/transaction/paket');
+					});
+
+				};
+
+				$scope.cancel = function() {
+					$location.path('/transaction/paket');
+				};
+
+			} ]);
 	
 	
 

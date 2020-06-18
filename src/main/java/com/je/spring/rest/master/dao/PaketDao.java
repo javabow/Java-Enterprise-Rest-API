@@ -18,5 +18,6 @@ public interface PaketDao {
     public Paket getById(int id);
     public long count();
     public void insert(Paket pengirim);
+    public void update(Paket pengirim);
     
 }

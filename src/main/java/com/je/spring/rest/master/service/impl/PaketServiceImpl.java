@@ -46,4 +46,9 @@ public class PaketServiceImpl implements PaketService{
         paketDao.insert(paket);
     }
     
+    @Override
+    public void update(Paket paket){
+        paketDao.update(paket);
+    }
+    
 }

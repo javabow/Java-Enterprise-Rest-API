@@ -86,6 +86,7 @@ public class PaketController {
             System.out.println(str);
             
             String mappaket = str.toString();
+            
             Paket paket = gson.fromJson(mappaket, Paket.class);
             
             Integer id_service313339 = paket.getId_service313339().getId_kurir_service313339();
@@ -101,8 +102,50 @@ public class PaketController {
 
                     return response;
                 }
-            
+           
             paketService.insert(paket);
+            
+            response.put(Constants.STATUS, Constants.OK);
+        }
+        catch(Exception e){
+            response.put(Constants.STATUS, Constants.ERROR);
+            e.printStackTrace();
+        }
+        
+        return response;
+        
+    }
+    
+    @RequestMapping(value = "/transaksi/paket/{id}", method = RequestMethod.PUT, produces = "application/json")
+    public @ResponseBody Map<String, Object> update(@PathVariable("id") final int id,
+           @RequestBody final Map<String, Object> request){
+        
+        Map<String, Object> response = new HashMap<String, Object>();
+        Map<String, Object> paketMap = (Map<String, Object>) request.get(Constants.PAKET313339_KEY);
+     
+        try{
+            StringBuffer str = new StringBuffer(paketMap.toString());
+        
+            System.out.println(str);
+            
+            String mappaket = str.toString();
+            Paket paket = gson.fromJson(mappaket, Paket.class);
+            
+            Integer id_service313339 = paket.getId_service313339().getId_kurir_service313339();
+                if(jenisPengirimanService.getById(id_service313339) == null) {
+                    response.put(Constants.STATUS, "Data Service tidak ditemukan.");
+
+                    return response;
+                }
+
+            Integer nip_pengirim313339 = paket.getId_pengirim313339().getNip_pengirim313339();
+                if(pengirimService.getById(nip_pengirim313339) == null) {
+                    response.put(Constants.STATUS, "Data Pengirim tidak ditemukan.");
+
+                    return response;
+                }
+           
+            paketService.update(paket);
             
             response.put(Constants.STATUS, Constants.OK);
         }

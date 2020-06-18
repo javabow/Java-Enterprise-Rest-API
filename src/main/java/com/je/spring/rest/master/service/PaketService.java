@@ -17,5 +17,6 @@ public interface PaketService {
     public Paket getById(int id);
     public long count();
     public void insert(Paket paket);
+    public void update(Paket paket);
     
 }
