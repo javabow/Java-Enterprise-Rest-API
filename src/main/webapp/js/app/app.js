@@ -8,6 +8,7 @@
                                          'je-master-sender-controller',
                                          'je-master-receiver-controller',
                                          'je-transaction-paket-controller',
+                                         'je-transaction-tracking-controller',
 	                                 'angularUtils.directives.dirPagination']);
 
 	app.config(function($routeProvider) {
@@ -129,6 +130,25 @@
 			controller: "ReceiverCreateController"
 		})
                 //end of Receiver Routes
+                
+                //Tracking routes
+                .when("/transaction/tracking", {
+			templateUrl : "template/transaction/tracking_list.html",
+			controller: "TrackingListController"
+		})
+                .when("/transaction/tracking/:id/detail", {
+			templateUrl : "template/transaction/tracking_detail.html",
+			controller: "TrackingDetailController"
+		})
+                .when("/transaction/tracking/new", {
+			templateUrl : "template/transaction/tracking_save.html",
+			controller: "TrackingCreateController"
+		})
+                .when("/transaction/tracking/:id/edit", {
+			templateUrl : "template/transaction/tracking_save.html",
+			controller: "TrackingEditController"
+		})
+                //end of Paket Routes
 		;
                 
 	});

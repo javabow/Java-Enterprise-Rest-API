@@ -173,7 +173,7 @@
 						id : $scope.paket.id_paket313339,
 						paket : $scope.paket
 					}, function(data) {
-						 if(data.statusCode == "200"){
+						 if(data.status == "OK"){
                                                     dlg = $dialogs.notify('Informasi', 'Data Sukses Disimpan');
                                                 }else{
                                                     dlg = $dialogs.error('Data Gagal Disimpan :'+data.status);

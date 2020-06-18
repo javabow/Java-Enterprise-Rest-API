@@ -24,9 +24,9 @@ import org.springframework.stereotype.Repository;
 @Repository("TrackingDao")
 public class TrackingDaoImpl implements TrackingDao{
     
-    private static final String SQL_INSERT_PAKET = "INSERT INTO TRACKING (id_sender313339, id_receiver313339, nomor_resi313339, tujuan313339, status313339) VALUES (?,?,?,?,?)";
+    private static final String SQL_INSERT_PAKET = "INSERT INTO TRACKING (id_sender313339, id_receiver313339, tujuan313339, status313339) VALUES (?,?,?,?,?)";
     
-    private static final String SQL_UPDATE_PAKET = "UPDATE TRACKING SET id_sender313339=?, id_receiver313339=?, nomor_resi313339=?, tujuan313339=?, status313339=? WHERE id_tracking313339=?";
+    private static final String SQL_UPDATE_PAKET = "UPDATE TRACKING SET id_sender313339=?, id_receiver313339=?, tujuan313339=?, status313339=? WHERE id_tracking313339=?";
     
     private static final String SQL_SELECT_PAKET_BY_ID = "SELECT tracking.id_tracking313339, tracking.nomor_resi313339, tracking.id_sender313339, tracking.id_receiver313339, tracking.tujuan313339, tracking.status313339,"
             + " sender.id_sender313339, sender.alamat_sender313339, sender.email_sender313339, sender.partner_sender313339, sender.nama_sender313339, sender.telp_sender313339,"
@@ -157,7 +157,7 @@ public class TrackingDaoImpl implements TrackingDao{
     @Override
     public void insert(Tracking tracking){
         try{
-            jdbcTemplate.update(SQL_INSERT_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getNomor_Resi313339(),tracking.getTujuan313339(),tracking.getStatus313339()});
+            jdbcTemplate.update(SQL_INSERT_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getTujuan313339(),tracking.getStatus313339()});
         }
         catch(Exception e){
             e.printStackTrace();
@@ -167,7 +167,7 @@ public class TrackingDaoImpl implements TrackingDao{
     @Override
     public void update(Tracking tracking){
         try{
-            jdbcTemplate.update(SQL_UPDATE_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getNomor_Resi313339(),tracking.getTujuan313339(),tracking.getStatus313339(),tracking.getId_tracking313339()});
+            jdbcTemplate.update(SQL_UPDATE_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getTujuan313339(),tracking.getStatus313339(),tracking.getId_tracking313339()});
         }
         catch(Exception e){
             e.printStackTrace();
