@@ -16,8 +16,17 @@ public class Tracking {
     private Sender id_sender313339;
     private Receiver id_receiver313339;
     private Status id_status313339;
+    private Kota id_kota313339;
     private String tujuan313339;
     private String status313339;
+
+    public Kota getId_kota313339() {
+        return id_kota313339;
+    }
+
+    public void setId_kota313339(Kota id_kota313339) {
+        this.id_kota313339 = id_kota313339;
+    }
 
     public Status getId_status313339() {
         return id_status313339;

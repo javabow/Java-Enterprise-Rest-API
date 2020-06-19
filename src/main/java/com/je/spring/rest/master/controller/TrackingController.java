@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.je.spring.rest.master.service.ReceiverService;
 import com.je.spring.rest.master.service.SenderService;
 import com.je.spring.rest.master.service.StatusService;
+import com.je.spring.rest.master.service.KotaService;
 import com.google.gson.Gson;
 /**
  *
@@ -41,6 +42,9 @@ public class TrackingController {
     
     @Autowired
     private StatusService statusService;
+    
+    @Autowired
+    private KotaService kotaService;
     
     Gson gson = new Gson();
     
@@ -113,6 +117,13 @@ public class TrackingController {
 
                     return response;
                 }
+                
+            Integer id_kota313339 = tracking.getId_kota313339().getId_kota313339();
+                if(kotaService.getById(id_kota313339) == null) {
+                    response.put(Constants.STATUS, "Data Kota tidak ditemukan.");
+
+                    return response;
+                }
             
             trackingService.insert(tracking);
             
@@ -162,7 +173,14 @@ public class TrackingController {
 
                     return response;
                 }
-                
+            
+            Integer id_kota313339 = tracking.getId_kota313339().getId_kota313339();
+                if(kotaService.getById(id_kota313339) == null) {
+                    response.put(Constants.STATUS, "Data Kota tidak ditemukan.");
+
+                    return response;
+                }    
+            
             trackingService.update(tracking);
             
             response.put(Constants.STATUS, Constants.OK);
