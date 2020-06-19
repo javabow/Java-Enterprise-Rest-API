@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 import com.je.spring.rest.master.dao.SenderDao;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 @Repository("senderDao")
 public class SenderDaoImpl implements SenderDao{

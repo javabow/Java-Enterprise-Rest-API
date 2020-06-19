@@ -7,7 +7,7 @@ package com.je.spring.rest.master.model;
 
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 public class Status {
     private int id_status313339;

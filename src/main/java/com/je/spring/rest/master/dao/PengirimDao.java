@@ -9,7 +9,7 @@ import java.util.List;
 import com.je.spring.rest.master.model.Pengirim;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 public interface PengirimDao {
     public List<Pengirim>getAll();

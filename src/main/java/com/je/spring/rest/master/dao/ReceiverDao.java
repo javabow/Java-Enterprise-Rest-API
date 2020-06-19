@@ -9,7 +9,7 @@ import java.util.List;
 import com.je.spring.rest.master.model.Receiver;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 public interface ReceiverDao {
     public List<Receiver>getAll();

@@ -9,15 +9,13 @@ import java.util.List;
 import com.je.spring.rest.master.model.Kota;
 /**
  *
- * @author Javabow
+ * @author Prasetyo
  */
-public class KotaDao {
-    
-//    public List<Kota>getAll();
-//    public Kota getById(int id);
-//    public long count();
-//    public void insert(Kota kota);
-//    public void update(Kota kota);
-//    public void delete(Kota kota);
-    
+public interface KotaDao {
+    public List<Kota>getAll();
+    public Kota getById(int id);
+    public long count();
+    /*public void insert(Status status);
+    public void update(Status status);
+    public void delete(Status status);*/
 }

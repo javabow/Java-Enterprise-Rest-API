@@ -7,7 +7,7 @@ package com.je.spring.rest.master.model;
 
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 public class Sender {
     private int id_sender313339;

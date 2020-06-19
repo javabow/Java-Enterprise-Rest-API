@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.je.spring.rest.master.service.ReceiverService;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 @Controller
 public class ReceiverController {

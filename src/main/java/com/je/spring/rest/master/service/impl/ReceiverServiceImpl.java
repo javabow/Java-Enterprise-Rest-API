@@ -14,7 +14,7 @@ import com.je.spring.rest.master.dao.ReceiverDao;
 import com.je.spring.rest.master.service.ReceiverService;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 @Service("receiverService")
 public class ReceiverServiceImpl implements ReceiverService{

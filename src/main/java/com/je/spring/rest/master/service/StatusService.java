@@ -9,7 +9,7 @@ import com.je.spring.rest.master.model.Status;
 import java.util.List;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 public interface StatusService {
     public List<Status> getAll();

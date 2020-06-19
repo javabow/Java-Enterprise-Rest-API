@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 import com.je.spring.rest.master.dao.ReceiverDao;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 @Repository("receiverDao")
 public class ReceiverDaoImpl implements ReceiverDao{

@@ -14,7 +14,7 @@ import com.je.spring.rest.master.dao.SenderDao;
 import com.je.spring.rest.master.service.SenderService;
 /**
  *
- * @author User
+ * @author Prasetyo
  */
 @Service("senderService")
 public class SenderServiceImpl implements SenderService{
