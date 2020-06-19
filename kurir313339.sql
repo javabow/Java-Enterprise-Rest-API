@@ -1,7 +1,25 @@
 ﻿# Host: localhost  (Version 5.5.5-10.4.10-MariaDB)
-# Date: 2020-06-19 10:30:49
+# Date: 2020-06-19 14:02:52
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
+
+#
+# Structure for table "kota"
+#
+
+DROP TABLE IF EXISTS `kota`;
+CREATE TABLE `kota` (
+  `id_kota313339` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_kota313339` varchar(255) DEFAULT NULL,
+  `lengkap_kota313339` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_kota313339`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+#
+# Data for table "kota"
+#
+
+INSERT INTO `kota` VALUES (325,'jkt','jakarta'),(326,'bdg','bandung'),(327,'ygk','yogyakarta'),(328,'dpk','depok'),(329,'tgr','tangerang');
 
 #
 # Structure for table "paket"
@@ -119,7 +137,7 @@ CREATE TABLE `status` (
   `id_status313339` int(11) NOT NULL AUTO_INCREMENT,
   `jenis_status313339` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_status313339`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4;
 
 #
 # Data for table "status"
@@ -166,4 +184,4 @@ CREATE TABLE `tracking` (
 # Data for table "tracking"
 #
 
-INSERT INTO `tracking` VALUES (101,'1qazxsw2','123','789','bandung','shipping'),(102,'qwertyu43','456','890','jakarta','transit'),(103,'xswwqza12','457','891','yogyakarta','tiba'),(104,NULL,'456','891','yogyakarta','proses'),(105,NULL,'456','890','jakarta','tiba');
+INSERT INTO `tracking` VALUES (101,'1qazxsw2','123','789','bandung','shipping'),(102,'qwertyu43','456','890','jakarta','transit'),(103,'xswwqza12','457','891','yogyakarta','tiba'),(104,'poiuytr43','456','891','yogyakarta','proses'),(105,'mkoijn98','456','890','jakarta','tiba');
