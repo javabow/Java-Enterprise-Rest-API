@@ -15,9 +15,18 @@ public class Tracking {
     private String nomor_resi313339;
     private Sender id_sender313339;
     private Receiver id_receiver313339;
+    private Status id_status313339;
     private String tujuan313339;
     private String status313339;
 
+    public Status getId_status313339() {
+        return id_status313339;
+    }
+
+    public void setId_status313339(Status id_status313339) {
+        this.id_status313339 = id_status313339;
+    }
+    
     public int getId_tracking313339() {
         return id_tracking313339;
     }

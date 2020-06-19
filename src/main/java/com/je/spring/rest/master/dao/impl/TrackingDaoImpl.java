@@ -9,6 +9,7 @@ import com.je.spring.rest.master.dao.TrackingDao;
 import com.je.spring.rest.master.model.Tracking;
 import com.je.spring.rest.master.model.Sender;
 import com.je.spring.rest.master.model.Receiver;
+import com.je.spring.rest.master.model.Status;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -24,29 +25,34 @@ import org.springframework.stereotype.Repository;
 @Repository("TrackingDao")
 public class TrackingDaoImpl implements TrackingDao{
     
-    private static final String SQL_INSERT_PAKET = "INSERT INTO TRACKING (id_sender313339, id_receiver313339, tujuan313339, status313339) VALUES (?,?,?,?)";
+    private static final String SQL_INSERT_PAKET = "INSERT INTO TRACKING (id_sender313339, id_receiver313339, tujuan313339, id_status313339) VALUES (?,?,?,?)";
     
-    private static final String SQL_UPDATE_PAKET = "UPDATE TRACKING SET id_sender313339=?, id_receiver313339=?, tujuan313339=?, status313339=? WHERE id_tracking313339=?";
+    private static final String SQL_UPDATE_PAKET = "UPDATE TRACKING SET id_sender313339=?, id_receiver313339=?, tujuan313339=?, id_status313339=? WHERE id_tracking313339=?";
     
-    private static final String SQL_SELECT_PAKET_BY_ID = "SELECT tracking.id_tracking313339, tracking.nomor_resi313339, tracking.id_sender313339, tracking.id_receiver313339, tracking.tujuan313339, tracking.status313339,"
+    private static final String SQL_SELECT_PAKET_BY_ID = "SELECT tracking.id_tracking313339, tracking.nomor_resi313339, tracking.id_sender313339, tracking.id_receiver313339, tracking.tujuan313339, tracking.id_status313339,"
             + " sender.id_sender313339, sender.alamat_sender313339, sender.email_sender313339, sender.partner_sender313339, sender.nama_sender313339, sender.telp_sender313339,"
-            + " receiver.id_receiver313339, receiver.alamat_receiver313339, receiver.email_receiver313339, receiver.pos_receiver313339, receiver.nama_receiver313339, receiver.telp_receiver313339"
+            + " receiver.id_receiver313339, receiver.alamat_receiver313339, receiver.email_receiver313339, receiver.pos_receiver313339, receiver.nama_receiver313339, receiver.telp_receiver313339,"
+            + " status.id_status313339, status.jenis_status313339"
             + " FROM tracking"
             + " INNER JOIN sender ON sender.id_sender313339 = tracking.id_sender313339"
             + " INNER JOIN receiver ON receiver.id_receiver313339 = tracking.id_receiver313339"
+            + " INNER JOIN status ON status.id_status313339 = tracking.id_status313339"
             + " WHERE tracking.id_tracking313339 = ?";
     
-    private static final String SQL_SELECT_PAKET_ALL = "SELECT tracking.id_tracking313339, tracking.nomor_resi313339, tracking.id_sender313339, tracking.id_receiver313339, tracking.tujuan313339, tracking.status313339,"
+    private static final String SQL_SELECT_PAKET_ALL = "SELECT tracking.id_tracking313339, tracking.nomor_resi313339, tracking.id_sender313339, tracking.id_receiver313339, tracking.tujuan313339, tracking.id_status313339,"
             + " sender.id_sender313339, sender.alamat_sender313339, sender.email_sender313339, sender.partner_sender313339, sender.nama_sender313339, sender.telp_sender313339,"
-            + " receiver.id_receiver313339, receiver.alamat_receiver313339, receiver.email_receiver313339, receiver.pos_receiver313339, receiver.nama_receiver313339, receiver.telp_receiver313339"
+            + " receiver.id_receiver313339, receiver.alamat_receiver313339, receiver.email_receiver313339, receiver.pos_receiver313339, receiver.nama_receiver313339, receiver.telp_receiver313339,"
+            + " status.id_status313339, status.jenis_status313339"
             + " FROM tracking"
             + " INNER JOIN sender ON sender.id_sender313339 = tracking.id_sender313339"
-            + " INNER JOIN receiver ON receiver.id_receiver313339 = tracking.id_receiver313339";
+            + " INNER JOIN receiver ON receiver.id_receiver313339 = tracking.id_receiver313339"
+            + " INNER JOIN status ON status.id_status313339 = tracking.id_status313339";
             
     private static final String SQL_COUNT_PAKET = "SELECT COUNT(*)"
             + " FROM tracking"
             + " INNER JOIN sender ON sender.id_sender313339 = tracking.id_sender313339"
-            + " INNER JOIN receiver ON receiver.id_receiver313339 = tracking.id_receiver313339";
+            + " INNER JOIN receiver ON receiver.id_receiver313339 = tracking.id_receiver313339"
+            + " INNER JOIN status ON status.id_status313339 = tracking.id_status313339";
             
             
     @Autowired
@@ -77,13 +83,17 @@ public class TrackingDaoImpl implements TrackingDao{
                                 receiver.setAlamat_receiver313339(rs.getString("alamat_receiver313339"));
                                 receiver.setPos_receiver313339(rs.getString("pos_receiver313339"));
 
+                                Status status = new Status();
+                                status.setId_status313339(rs.getInt("id_status313339"));
+                                status.setJenis_status313339(rs.getString("jenis_status313339"));
+                                
                                 Tracking tracking = new Tracking();
                                 tracking.setId_tracking313339(rs.getInt("tracking.id_tracking313339"));
                                 tracking.setId_sender313339(sender);
                                 tracking.setId_receiver313339(receiver);
                                 tracking.setNomor_Resi313339(rs.getString("tracking.nomor_resi313339"));
                                 tracking.setTujuan313339(rs.getString("tracking.tujuan313339"));
-                                tracking.setStatus313339(rs.getString("tracking.status313339"));
+                                tracking.setId_status313339(status);
 
                                 return tracking;
                             }
@@ -121,13 +131,17 @@ public class TrackingDaoImpl implements TrackingDao{
                                 receiver.setAlamat_receiver313339(rs.getString("alamat_receiver313339"));
                                 receiver.setPos_receiver313339(rs.getString("pos_receiver313339"));
 
+                                Status status = new Status();
+                                status.setId_status313339(rs.getInt("id_status313339"));
+                                status.setJenis_status313339(rs.getString("jenis_status313339"));
+                                
                                 Tracking tracking = new Tracking();
                                 tracking.setId_tracking313339(rs.getInt("tracking.id_tracking313339"));
                                 tracking.setId_sender313339(sender);
                                 tracking.setId_receiver313339(receiver);
                                 tracking.setNomor_Resi313339(rs.getString("tracking.nomor_resi313339"));
                                 tracking.setTujuan313339(rs.getString("tracking.tujuan313339"));
-                                tracking.setStatus313339(rs.getString("tracking.status313339"));
+                                tracking.setId_status313339(status);
 
                                 return tracking;
                             }
@@ -157,7 +171,7 @@ public class TrackingDaoImpl implements TrackingDao{
     @Override
     public void insert(Tracking tracking){
         try{
-            jdbcTemplate.update(SQL_INSERT_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getTujuan313339(),tracking.getStatus313339()});
+            jdbcTemplate.update(SQL_INSERT_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getTujuan313339(),tracking.getId_status313339().getId_status313339()});
         }
         catch(Exception e){
             e.printStackTrace();
@@ -167,7 +181,7 @@ public class TrackingDaoImpl implements TrackingDao{
     @Override
     public void update(Tracking tracking){
         try{
-            jdbcTemplate.update(SQL_UPDATE_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getTujuan313339(),tracking.getStatus313339(),tracking.getId_tracking313339()});
+            jdbcTemplate.update(SQL_UPDATE_PAKET, new Object[]{tracking.getId_sender313339().getId_sender313339(),tracking.getId_receiver313339().getId_receiver313339(),tracking.getTujuan313339(),tracking.getId_status313339().getId_status313339(),tracking.getId_tracking313339()});
         }
         catch(Exception e){
             e.printStackTrace();
